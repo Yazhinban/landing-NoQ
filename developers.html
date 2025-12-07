@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers | NoQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">NoQ<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="developers.html" class="active">Developers</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Meet the Builders</h1>
+            <p>The engineering team behind the seamless NoQ experience.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="team-intro">
+                <p>NoQ is built and maintained by a dedicated team of developers passionate about solving real-world campus logistics problems. We manage the entire ecosystem from server architecture to the user interface.</p>
+            </div>
+
+            <div class="developers-grid">
+                
+                <div class="dev-card">
+                    <div class="dev-photo-placeholder">
+                        <img src="images/divyanand.jpg" alt="Divyanand">
+                    </div>
+                    <div class="dev-info">
+                        <h3>Divyanand</h3>
+                        <span class="role">Backend & Razorpay Integration</span>
+                        <p class="bio">Specializes in scalable server architecture. Divyanand ensures that every transaction is secure and compliant using the Razorpay payment gateway.</p>
+                        <div class="dev-responsibilities">
+                            <strong>Key Responsibilities:</strong>
+                            <ul>
+                                <li>API Architecture</li>
+                                <li>Database Management</li>
+                                <li>Razorpay Payment Integration</li>
+                            </ul>
+                        </div>
+                        <div class="social-links" style="display: flex; flex-direction: column; gap: 5px; margin-top: 15px;">
+                            <a href="https://www.linkedin.com/in/divyanand-a-p-63a098334" target="_blank" style="font-size: 1.4rem; color: var(--secondary); display: inline-block; width: fit-content;"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:divyanand942@gmail.com" style="font-size: 0.95rem; color: var(--primary); text-decoration: underline;">divyanand942@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dev-card">
+                    <div class="dev-photo-placeholder">
+                        <img src="images/yazhinban.jpg" alt="Yazhinban">
+                    </div>
+                    <div class="dev-info">
+                        <h3>Yazhinban</h3>
+                        <span class="role">Frontend & UI/UX Lead</span>
+                        <p class="bio">Focused on creating intuitive user journeys. Yazhinban designed the NoQ interface to ensure students can order food effortlessly.</p>
+                        <div class="dev-responsibilities">
+                            <strong>Key Responsibilities:</strong>
+                            <ul>
+                                <li>UI/UX Design</li>
+                                <li>Mobile Responsiveness</li>
+                                <li>Merchant Dashboard Logic</li>
+                            </ul>
+                        </div>
+                        <div class="social-links" style="display: flex; flex-direction: column; gap: 5px; margin-top: 15px;">
+                            <a href="https://www.linkedin.com/in/yazhinban-ss-7b5080338?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="font-size: 1.4rem; color: var(--secondary); display: inline-block; width: fit-content;"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:yazhinbanssy@gmail.com" style="font-size: 0.95rem; color: var(--primary); text-decoration: underline;">yazhinbanssy@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Technical Support & Integration</h2>
+            <p style="text-align: center; margin-bottom: 30px;">
+                Are you a college administrator or merchant looking to integrate NoQ? Contact the dev team directly using the form below or email us at <strong style="color: var(--primary);">noqeatssrm@gmail.com</strong>.
+            </p>
+            
+            <form class="contact-form" id="supportForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="contactName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Inquiry Type</label>
+                    <select id="contactType">
+                        <option>Merchant Onboarding</option>
+                        <option>Technical Issue</option>
+                        <option>Partnership</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="contactMessage" rows="4" placeholder="How can we help?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message via Email</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+                Or email us directly at <a href="mailto:noqeatssrm@gmail.com" style="color:var(--primary); font-weight:bold;">noqeatssrm@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>NoQ.</h3>
+                <p>Engineering efficient campuses.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>SRM Nagar, Potheri, Mahatma Gandhi Road, Kattankolathur-603203</p>
+                <p>Chengalpattu District, Tamil Nadu, India</p>
+                <p>+91 8610070312</p>
+                <p>+91 9600798071</p>
+                <p>noqeatssrm@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="refund.html">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2025 NoQ Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
