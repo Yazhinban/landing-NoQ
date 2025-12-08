@@ -121,13 +121,81 @@ footer { background: #1a1a1a; color: #ccc; padding-top: 80px; }
 .footer-col a:hover { color: var(--primary); }
 .bottom-bar { background: #111; text-align: center; padding: 25px; font-size: 0.9rem; color: #777; border-top: 1px solid #222; }
 
-/* Responsive */
-@media (max-width: 968px) { .hero-text h1 { font-size: 2.8rem; } .hero-image-container { justify-content: center; } }
-@media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: block; } .hero { padding: 100px 0 60px; } .hero-content { flex-direction: column; text-align: center; } .hero-text p { margin: 0 auto 30px; } .hero-buttons { justify-content: center; } .hero-image-container { margin-top: 50px; } .hero-app-preview { transform: none; max-width: 80%; } .dev-card { flex-direction: column; text-align: center; align-items: center; } }
-
 /* Legal Typography */
 .container.section h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--secondary); }
 .container.section h2 { font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; color: var(--primary); }
 .container.section p { margin-bottom: 15px; color: var(--text-light); }
 .container.section ul { margin-bottom: 20px; padding-left: 20px; list-style-type: disc; }
 .container.section li { margin-bottom: 10px; color: var(--text-light); }
+
+/* =========================================
+   RESPONSIVE DESIGN & MOBILE FIXES
+   ========================================= */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 968px) { 
+    .hero-text h1 { font-size: 2.8rem; } 
+    .hero-image-container { justify-content: center; } 
+}
+
+/* Mobile Devices (Main Fixes) */
+@media (max-width: 768px) { 
+    /* Navigation & Menu */
+    .nav-links { display: none; } 
+    .hamburger { display: block; } 
+
+    /* Layout Spacing */
+    .section { padding: 50px 0; }
+    .hero { padding: 110px 0 60px; } 
+
+    /* Container Adjustments */
+    .container { padding: 0 20px; }
+
+    /* Grid Fix: Stack vertically on mobile instead of fixed 300px width */
+    .steps-grid, 
+    .mockup-grid, 
+    .shops-grid, 
+    .developers-grid, 
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Cards */
+    .step-card, .mockup-card, .shop-card, .dev-card, .faq-item {
+        padding: 25px;
+    }
+
+    /* Hero Section Adjustments */
+    .hero-content { flex-direction: column; text-align: center; } 
+    .hero-text p { margin: 0 auto 30px; } 
+    .hero-image-container { margin-top: 40px; } 
+    .hero-app-preview { transform: none; max-width: 85%; } 
+
+    /* Hero Buttons: Stack vertically for easier tapping */
+    .hero-buttons { 
+        flex-direction: column; 
+        width: 100%;
+        gap: 15px;
+    }
+    .hero-buttons .btn-primary, 
+    .hero-buttons .btn-outline {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Developers Page Adjustments */
+    .dev-card { flex-direction: column; text-align: center; align-items: center; }
+    
+    /* Typography Scaling */
+    .hero-text h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 2rem; }
+    .logo { font-size: 1.4rem; }
+    .shop-img { height: 180px; }
+}
