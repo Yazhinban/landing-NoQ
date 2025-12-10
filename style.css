@@ -15,6 +15,15 @@ body {
     line-height: 1.7;
     color: var(--text-dark);
     background-color: var(--white);
+    
+    /* FAST TRANSITION: 0.2s for a snappy, app-like feel */
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Class to fade out the page before navigating */
+body.fade-out {
+    opacity: 0;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -26,6 +35,52 @@ ul { list-style: none; }
 .bg-light { background-color: var(--bg-light); }
 .section-title { text-align: center; font-size: 2.5rem; font-weight: 600; margin-bottom: 15px; color: var(--secondary); }
 .section-subtitle { text-align: center; margin-bottom: 60px; color: var(--text-light); font-size: 1.1rem; }
+
+/* ----------------------------------
+   PRELOADER STYLES
+   ---------------------------------- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-logo {
+    width: 200px; 
+    height: auto;
+    opacity: 0; 
+}
+
+/* --- Animation 1: The Pop-In --- */
+.anim-pop {
+    animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Animation 2: The Slide-Up --- */
+.anim-slide {
+    animation: slideUp 0.8s ease-out forwards;
+}
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hide-loader {
+    opacity: 0;
+    visibility: hidden;
+}
 
 /* Buttons */
 .btn-primary {
@@ -43,8 +98,23 @@ ul { list-style: none; }
 /* Navbar */
 .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 20px 0; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.8rem; font-weight: 700; color: var(--secondary); letter-spacing: -1px; }
+
+/* Logo Styles */
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    color: var(--secondary); 
+    letter-spacing: -1px; 
+    display: flex;
+    align-items: center;
+    gap: 0px; 
+}
+.nav-logo-icon {
+    height: 40px; 
+    width: auto;
+}
 .logo .dot { color: var(--primary); }
+
 .nav-links { display: flex; align-items: center; gap: 35px; }
 .nav-links a { font-weight: 500; color: var(--text-dark); }
 .nav-links a.active, .nav-links a:hover { color: var(--primary); }
@@ -121,79 +191,31 @@ footer { background: #1a1a1a; color: #ccc; padding-top: 80px; }
 .footer-col a:hover { color: var(--primary); }
 .bottom-bar { background: #111; text-align: center; padding: 25px; font-size: 0.9rem; color: #777; border-top: 1px solid #222; }
 
-/* Legal Typography */
-.container.section h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--secondary); }
-.container.section h2 { font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; color: var(--primary); }
-.container.section p { margin-bottom: 15px; color: var(--text-light); }
-.container.section ul { margin-bottom: 20px; padding-left: 20px; list-style-type: disc; }
-.container.section li { margin-bottom: 10px; color: var(--text-light); }
-
-/* =========================================
-   RESPONSIVE DESIGN & MOBILE FIXES
-   ========================================= */
-
-/* Tablet & Smaller Laptops */
+/* Responsive adjustments */
 @media (max-width: 968px) { 
     .hero-text h1 { font-size: 2.8rem; } 
     .hero-image-container { justify-content: center; } 
 }
 
-/* Mobile Devices (Main Fixes) */
 @media (max-width: 768px) { 
-    /* Navigation & Menu */
     .nav-links { display: none; } 
     .hamburger { display: block; } 
-
-    /* Layout Spacing */
     .section { padding: 50px 0; }
     .hero { padding: 110px 0 60px; } 
-
-    /* Container Adjustments */
     .container { padding: 0 20px; }
-
-    /* Grid Fix: Stack vertically on mobile instead of fixed 300px width */
-    .steps-grid, 
-    .mockup-grid, 
-    .shops-grid, 
-    .developers-grid, 
-    .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    /* Cards */
-    .step-card, .mockup-card, .shop-card, .dev-card, .faq-item {
-        padding: 25px;
-    }
-
-    /* Hero Section Adjustments */
+    .steps-grid, .mockup-grid, .shops-grid, .developers-grid, .faq-grid { grid-template-columns: 1fr; gap: 25px; }
+    .step-card, .mockup-card, .shop-card, .dev-card, .faq-item { padding: 25px; }
     .hero-content { flex-direction: column; text-align: center; } 
     .hero-text p { margin: 0 auto 30px; } 
     .hero-image-container { margin-top: 40px; } 
     .hero-app-preview { transform: none; max-width: 85%; } 
-
-    /* Hero Buttons: Stack vertically for easier tapping */
-    .hero-buttons { 
-        flex-direction: column; 
-        width: 100%;
-        gap: 15px;
-    }
-    .hero-buttons .btn-primary, 
-    .hero-buttons .btn-outline {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Developers Page Adjustments */
+    .hero-buttons { flex-direction: column; width: 100%; gap: 15px; }
+    .hero-buttons .btn-primary, .hero-buttons .btn-outline { display: block; width: 100%; text-align: center; }
     .dev-card { flex-direction: column; text-align: center; align-items: center; }
-    
-    /* Typography Scaling */
     .hero-text h1 { font-size: 2.5rem; }
     .section-title { font-size: 2rem; }
 }
 
-/* Small Mobile Devices */
 @media (max-width: 480px) {
     .hero-text h1 { font-size: 2rem; }
     .logo { font-size: 1.4rem; }
